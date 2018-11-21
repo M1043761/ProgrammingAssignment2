@@ -34,21 +34,3 @@ makeCacheMatrix <- function(x = matrix()) {
              getInverse = getInverse)
 }
 
-
-
-f <- file("stdin")
-on.exit(close(f))
-
-T <- readLines(f)
-T <- strsplit(T, " ")
-Ti <- as.numeric(T[[2]])
-M <- as.numeric(T[[1]])
-L=length(Ti)-M+1
-if(L<=0)
-{M <-"NIL"
-    write(M, stdout())
-} else write(Ti[L], stdout())
-setTimeLimit(cpu = Inf, elapsed = Inf, transient = FALSE)
-getwd()
-setSessionTimeLimit(cpu = Inf, elapsed = Inf)
-}
